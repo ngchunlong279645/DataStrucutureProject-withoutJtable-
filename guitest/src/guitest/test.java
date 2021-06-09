@@ -148,7 +148,7 @@ public class test {
 			}
 			
 		});
-		btnSearch.setBounds(154, 371, 89, 23);
+		btnSearch.setBounds(154, 383, 89, 23);
 		frmBankingManagementSystem.getContentPane().add(btnSearch);
 		
 		JButton btnNewButton = new JButton("");
@@ -178,7 +178,8 @@ public class test {
 		
 		
 		JButton btnNewButton_1 = new JButton("DISPLAY");
-		btnNewButton_1.setFont(new Font("Letter Gothic Std", Font.BOLD, 14));
+		btnNewButton_1.setBackground(new Color(204, 204, 255));
+		btnNewButton_1.setFont(new Font("Letter Gothic Std", Font.BOLD, 12));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea_1.append("\n");
@@ -194,7 +195,7 @@ public class test {
 				
 			}
 		});
-		btnNewButton_1.setBounds(154, 305, 89, 23);
+		btnNewButton_1.setBounds(154, 305, 90, 28);
 		frmBankingManagementSystem.getContentPane().add(btnNewButton_1);
 	}
 
@@ -334,7 +335,7 @@ public class test {
 					} //end addLast() method
 			
 		});
-		btnAdd.setBounds(55, 337, 89, 23);
+		btnAdd.setBounds(55, 348, 89, 23);
 		frmBankingManagementSystem.getContentPane().add(btnAdd);
 		
 		JButton btnEdit = new JButton("EDIT");
@@ -362,7 +363,7 @@ public class test {
 				refresh();
 			}
 		});
-		btnEdit.setBounds(154, 337, 89, 23);
+		btnEdit.setBounds(154, 348, 89, 23);
 		frmBankingManagementSystem.getContentPane().add(btnEdit);
 		
 		JButton btnDelete = new JButton("DELETE");
@@ -388,7 +389,7 @@ public class test {
 				JOptionPane.showMessageDialog(null, "No Data");
 			}
 		});
-		btnDelete.setBounds(55, 371, 89, 23);
+		btnDelete.setBounds(55, 383, 89, 23);
 		frmBankingManagementSystem.getContentPane().add(btnDelete);
 	}
 	private void add(JScrollPane jsp2) {
