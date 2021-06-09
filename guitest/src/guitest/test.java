@@ -183,14 +183,14 @@ public class test {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea_1.append("\n");
-				textArea_1.append("================================================================================================\n");
-				textArea_1.append(" Firstname\tLastname\tAge\tGender\tEmail\tAccNo.\tPhoneNo.\tAccType\n");
-				textArea_1.append("================================================================================================\n");
+				textArea_1.append("=====================================================================================================\n");
+				textArea_1.append(" FirstName\tLastName\tAge     Gender \tEmail\t\tAccNo.\t   PhoneNo.\t   AccType \n");
+				textArea_1.append("=====================================================================================================\n");
 				insertionSort();
 				for(int i=0;i<num;i++) {
 					textArea_1.append(" "+myList[i].getFirstName()+"\t"+myList[i].getLastName()+"\t"+
-							myList[i].getAge()+"\t"+myList[i].getGender()+"\t"+myList[i].getEmail()+"\t"+
-							myList[i].getAccNum()+"\t"+myList[i].getPhoneNum()+"\t"+myList[i].getAccType()+"\n");
+							myList[i].getAge()+"     "+myList[i].getGender()+" \t"+myList[i].getEmail()+"\t"+
+							myList[i].getAccNum()+"\t   "+myList[i].getPhoneNum()+"\t   "+myList[i].getAccType()+" \n");
 				}
 				
 			}
