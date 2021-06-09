@@ -81,7 +81,6 @@ public class test {
 	         for (;y>0 && Integer.parseInt(tempList.getAccNum())<Integer.parseInt(myList[y-1].getAccNum());y--) 
 	        	 myList[y]=myList[y-1];  
 	         myList[y]=tempList;
-	     
 	         }
 	       }
 	
@@ -174,11 +173,12 @@ public class test {
 		
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\Ivy Ng\\Downloads\\Pink-Flower-icon.png"));
-		lblNewLabel_2.setBounds(234, 360, 60, 46);
+		lblNewLabel_2.setBounds(242, 360, 60, 46);
 		frmBankingManagementSystem.getContentPane().add(lblNewLabel_2);
 		
 		
 		JButton btnNewButton_1 = new JButton("DISPLAY");
+		btnNewButton_1.setFont(new Font("Letter Gothic Std", Font.BOLD, 14));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea_1.append("\n");
@@ -217,7 +217,7 @@ public class test {
 		frmBankingManagementSystem.getContentPane().add(textArea_1);
 		
 		JScrollPane scrollPane = new JScrollPane(textArea_1);
-		 scrollPane.setBounds(282, 30, 689, 330);
+		 scrollPane.setBounds(282, 30, 689, 356);
 		 scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		 frmBankingManagementSystem.getContentPane().add(scrollPane);
 		 
@@ -330,8 +330,7 @@ public class test {
 					 num++;
 					 }
 				JOptionPane.showMessageDialog(null, "Added Successfully");
-				
-				
+				refresh();
 					} //end addLast() method
 			
 		});
@@ -360,6 +359,7 @@ public class test {
 					}
 					
 				}
+				refresh();
 			}
 		});
 		btnEdit.setBounds(154, 337, 89, 23);
