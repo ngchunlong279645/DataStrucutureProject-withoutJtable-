@@ -217,7 +217,7 @@ public class test {
 		frmBankingManagementSystem.getContentPane().add(textArea_1);
 		
 		JScrollPane scrollPane = new JScrollPane(textArea_1);
-		 scrollPane.setBounds(282, 30, 689, 356);
+		 scrollPane.setBounds(294, 24, 689, 356);
 		 scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		 frmBankingManagementSystem.getContentPane().add(scrollPane);
 		 
