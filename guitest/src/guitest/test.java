@@ -182,6 +182,7 @@ public class test {
 		btnNewButton_1.setFont(new Font("Letter Gothic Std", Font.BOLD, 12));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				textArea_1.setText("");
 				textArea_1.append("\n");
 				textArea_1.append("=====================================================================================================\n");
 				textArea_1.append(" FirstName\tLastName\tAge     Gender \tEmail\t\tAccNo.\t   PhoneNo.\t   AccType \n");
