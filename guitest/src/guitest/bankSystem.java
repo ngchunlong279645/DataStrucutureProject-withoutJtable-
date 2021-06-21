@@ -23,7 +23,7 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
 import javax.swing.JProgressBar;
 
-public class test {
+public class bankSystem {
 
 	private JFrame frmBankingManagementSystem;
 	private static JTextField firstname;
@@ -47,14 +47,15 @@ public class test {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					test window = new test();
+					bankSystem window = new bankSystem();
 					window.frmBankingManagementSystem.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-	}
+	}	//end main method
+	
 	public static boolean isEmpty( ) {
 		 if(num== 0)
 		 return true;
@@ -82,7 +83,7 @@ public class test {
 	        	 myList[y]=myList[y-1];  
 	         myList[y]=tempList;
 	         }
-	       }
+	       } // end insertionSort()
 	
 	
 	public void refresh() {
@@ -95,12 +96,12 @@ public class test {
 		phnumber.setText("");
 		acctype.setText("");
 		
-	}
+	} //end refresh()
 
 	/**
 	 * Create the application.
 	 */
-	public test() {
+	public bankSystem() {
 		initialize();
 		
 		
@@ -116,50 +117,6 @@ public class test {
 		acctype.setColumns(10);
 		acctype.setBounds(122, 274, 121, 20);
 		frmBankingManagementSystem.getContentPane().add(acctype);
-		
-		JButton btnSearch = new JButton("SEARCH");
-		btnSearch.setFont(new Font("Letter Gothic Std", Font.BOLD, 15));
-		btnSearch.setBackground(new Color(255, 160, 122));
-		btnSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String input = JOptionPane.showInputDialog(null,"Search Account No: ");
-				 int first = 0, last = num-1 ;
-			        while (first <= last) {
-			            int mid = (first + last ) / 2;
-			            if (myList[mid].getAccNum().equals(input)) {
-			            	JOptionPane.showMessageDialog(null, "Found", "Search Information",2);
-							firstname.setText(myList[mid].getFirstName());
-							lastname.setText(myList[mid].getLastName());
-							age.setText(myList[mid].getAge());
-							gender.setText(myList[mid].getGender());
-							email.setText(myList[mid].getEmail());
-							accnum.setText(myList[mid].getAccNum());
-							phnumber.setText(myList[mid].getPhoneNum());
-							acctype.setText(myList[mid].getAccType()); 
-							return;
-			            }
-			            if (myList[mid].getAccNum().compareTo(input)<0) {
-			                first = mid + 1;
-			            }
-			            else
-			                last = mid - 1;
-			        }  
-			        JOptionPane.showMessageDialog(null, "Not Found");
-			}
-			
-		});
-		btnSearch.setBounds(154, 383, 89, 23);
-		frmBankingManagementSystem.getContentPane().add(btnSearch);
-		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				refresh();
-			}
-		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Ivy Ng\\Pictures\\CaptureFSDF.PNG"));
-		btnNewButton.setBounds(253, 29, 19, 20);
-		frmBankingManagementSystem.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Ivy Ng\\Downloads\\Unicorn-icon (1).png"));
@@ -177,28 +134,8 @@ public class test {
 		frmBankingManagementSystem.getContentPane().add(lblNewLabel_2);
 		
 		
-		JButton btnNewButton_1 = new JButton("DISPLAY");
-		btnNewButton_1.setBackground(new Color(204, 204, 255));
-		btnNewButton_1.setFont(new Font("Letter Gothic Std", Font.BOLD, 12));
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				textArea_1.setText("");
-				textArea_1.append("\n");
-				textArea_1.append("=====================================================================================================\n");
-				textArea_1.append(" FirstName\tLastName\tAge     Gender \tEmail\t\tAccNo.\t   PhoneNo.\t   AccType \n");
-				textArea_1.append("=====================================================================================================\n");
-				insertionSort();
-				for(int i=0;i<num;i++) {
-					textArea_1.append(" "+myList[i].getFirstName()+"\t"+myList[i].getLastName()+"\t"+
-							myList[i].getAge()+"     "+myList[i].getGender()+" \t"+myList[i].getEmail()+"\t"+
-							myList[i].getAccNum()+"\t   "+myList[i].getPhoneNum()+"\t   "+myList[i].getAccType()+" \n");
-				}
-				
-			}
-		});
-		btnNewButton_1.setBounds(154, 305, 90, 28);
-		frmBankingManagementSystem.getContentPane().add(btnNewButton_1);
-	}
+		
+	} // end banksystem()
 
 	/**
 	 * Initialize the contents of the frame.
@@ -315,7 +252,7 @@ public class test {
 		phnumber.setBounds(122, 239, 121, 20);
 		frmBankingManagementSystem.getContentPane().add(phnumber);
 		
-		JButton btnAdd = new JButton("ADD");
+		JButton btnAdd = new JButton("ADD");	// add method
 		btnAdd.setFont(new Font("Letter Gothic Std", Font.BOLD, 15));
 		btnAdd.setBackground(new Color(127, 255, 212));
 		btnAdd.addActionListener(new ActionListener() {
@@ -331,15 +268,16 @@ public class test {
 					 myList[num]=new customer (firstname.getText(),lastname.getText(),age.getText(),gender.getText(),email.getText(),accnum.getText(),phnumber.getText(),acctype.getText());
 					 num++;
 					 }
+				insertionSort();
 				JOptionPane.showMessageDialog(null, "Added Successfully");
 				refresh();
-					} //end addLast() method
+					} //end add() method
 			
 		});
 		btnAdd.setBounds(55, 348, 89, 23);
 		frmBankingManagementSystem.getContentPane().add(btnAdd);
 		
-		JButton btnEdit = new JButton("EDIT");
+		JButton btnEdit = new JButton("EDIT");	// edit method
 		btnEdit.setFont(new Font("Letter Gothic Std", Font.BOLD, 15));
 		btnEdit.setBackground(new Color(144, 238, 144));
 		btnEdit.addActionListener(new ActionListener() {
@@ -362,12 +300,12 @@ public class test {
 					
 				}
 				refresh();
-			}
+			} // end edit ()
 		});
 		btnEdit.setBounds(154, 348, 89, 23);
 		frmBankingManagementSystem.getContentPane().add(btnEdit);
 		
-		JButton btnDelete = new JButton("DELETE");
+		JButton btnDelete = new JButton("DELETE");  // delete method
 		btnDelete.setFont(new Font("Letter Gothic Std", Font.BOLD, 15));
 		btnDelete.setBackground(new Color(240, 230, 140));
 		btnDelete.addActionListener(new ActionListener() {
@@ -388,13 +326,78 @@ public class test {
 				}
 				}
 				JOptionPane.showMessageDialog(null, "No Data");
-			}
+			} // end delete()
 		});
 		btnDelete.setBounds(55, 383, 89, 23);
 		frmBankingManagementSystem.getContentPane().add(btnDelete);
-	}
-	private void add(JScrollPane jsp2) {
-		// TODO Auto-generated method stub
 		
-	}
+		JButton btnNewButton_1 = new JButton("DISPLAY"); //display method
+		btnNewButton_1.setBackground(new Color(204, 204, 255));
+		btnNewButton_1.setFont(new Font("Letter Gothic Std", Font.BOLD, 12));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea_1.setText("");
+				textArea_1.append("\n");
+				textArea_1.append("=====================================================================================================\n");
+				textArea_1.append(" FirstName\tLastName\tAge     Gender \tEmail\t\tAccNo.\t   PhoneNo.\t   AccType \n");
+				textArea_1.append("=====================================================================================================\n");
+				for(int i=0;i<num;i++) {
+					textArea_1.append(" "+myList[i].getFirstName()+"\t"+myList[i].getLastName()+"\t"+
+							myList[i].getAge()+"     "+myList[i].getGender()+" \t"+myList[i].getEmail()+"\t"+
+							myList[i].getAccNum()+"\t   "+myList[i].getPhoneNum()+"\t   "+myList[i].getAccType()+" \n");
+				}
+				
+			} //end display method
+		});
+		btnNewButton_1.setBounds(154, 305, 90, 28);
+		frmBankingManagementSystem.getContentPane().add(btnNewButton_1);
+		
+		JButton btnSearch = new JButton("SEARCH");  //search method
+		btnSearch.setFont(new Font("Letter Gothic Std", Font.BOLD, 15));
+		btnSearch.setBackground(new Color(255, 160, 122));
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String input = JOptionPane.showInputDialog(null,"Search Account No: ");
+				 int first = 0, last = num-1 ;
+			        while (first <= last) {
+			            int mid = (first + last ) / 2;
+			            if (myList[mid].getAccNum().equals(input)) {
+			            	JOptionPane.showMessageDialog(null, "Found", "Search Information",2);
+							firstname.setText(myList[mid].getFirstName());
+							lastname.setText(myList[mid].getLastName());
+							age.setText(myList[mid].getAge());
+							gender.setText(myList[mid].getGender());
+							email.setText(myList[mid].getEmail());
+							accnum.setText(myList[mid].getAccNum());
+							phnumber.setText(myList[mid].getPhoneNum());
+							acctype.setText(myList[mid].getAccType()); 
+							return;
+			            }
+			            if (myList[mid].getAccNum().compareTo(input)<0) {
+			                first = mid + 1;
+			            }
+			            else
+			                last = mid - 1;
+			        }  
+			        JOptionPane.showMessageDialog(null, "Not Found");
+			}//end search method
+			
+		});
+		btnSearch.setBounds(154, 383, 89, 23);
+		frmBankingManagementSystem.getContentPane().add(btnSearch);
+		
+
+		
+		JButton btnNewButton = new JButton(""); //refresh method
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				refresh();
+			} // end refresh method
+		});
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Ivy Ng\\Pictures\\CaptureFSDF.PNG"));
+		btnNewButton.setBounds(253, 29, 19, 20);
+		frmBankingManagementSystem.getContentPane().add(btnNewButton);
+		
+		
+	} // end 
 }
